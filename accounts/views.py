@@ -16,9 +16,9 @@ def login(request):
         return render(request, 'accounts/login.html')
 
 def logout(request):
-    # TO DO: Need to route to home page
-    # And don't forget to log out :)
-    return render(request, 'accounts/signup.html')
+    if request.method == 'POST':
+        auth.logout(request)
+        return redirect('home')
 
 def signup(request):
     if request.method == 'POST':

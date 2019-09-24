@@ -1,5 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-Product Hunt Home!
+
+{% for product in products.all %}
+  <div class="row">
+    <div class="col-2">
+      <img src="{{ project.image.url }}" class="img-fluid" />
+    </div>
+    <div class="col-6">
+    </div>
+    <div class="col-4">
+    </div>
+  </div>
+{% endfor %}
+
 {% endblock %}
